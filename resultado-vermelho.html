@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Protocolo de Atenção Especializada Prioritária — Instituto Reviver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+:root {
+  --yellow: #FFD700; --yellow-dark: #E6B800; --yellow-deep: #C9A200;
+  --yellow-glow: rgba(255,215,0,.20); --yellow-tint: #FFFBE6;
+  --red: #CC0000; --red-dark: #A30000;
+  --cream: #FFFDF5; --cream-dark: #F5F0E8;
+  --ink: #1A1A1A; --ink-mid: #4A4040; --ink-soft: #7A7070;
+  --border: rgba(26,20,20,.10); --white: #ffffff;
+  --max-w: 680px; --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
+  --ease-out: cubic-bezier(.22,1,.36,1);
+}
+html, body { width:100%; min-height:100%; background:var(--cream-dark); font-family:'Poppins',sans-serif; -webkit-font-smoothing:antialiased; }
+body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E"); pointer-events:none; z-index:0; }
+#page { width:100%; max-width:var(--max-w); margin:0 auto; background:var(--cream); min-height:100svh; position:relative; z-index:1; }
+
+/* HEADER */
+.rpt-header { padding: 24px 24px 20px; border-bottom: 1px solid var(--border); display:flex; align-items:center; gap:14px; }
+.rpt-header img { width:52px; height:52px; object-fit:contain; border-radius:50%; box-shadow:0 2px 10px rgba(0,0,0,.12); flex-shrink:0; }
+.rpt-header-text { display:flex; flex-direction:column; gap:3px; }
+.rpt-instituto { font-size:11px; font-weight:700; color:var(--red); letter-spacing:.08em; text-transform:uppercase; }
+.rpt-doc-title { font-size:14px; font-weight:700; color:var(--ink); line-height:1.2; }
+
+/* BANNER */
+.rpt-banner { padding: 28px 24px; position:relative; overflow:hidden; }
+.rpt-banner::before { content:''; position:absolute; top:-60px; right:-60px; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.15); }
+.rpt-badge { display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:5px 14px; font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px; background:rgba(255,255,255,.5); backdrop-filter:blur(4px); }
+.rpt-title { font-size:clamp(20px,5vw,28px); font-weight:800; line-height:1.2; margin-bottom:10px; letter-spacing:-.02em; }
+.rpt-intro { font-size:14px; font-weight:400; line-height:1.75; opacity:.85; }
+
+/* CONTENT */
+.rpt-body { padding: 0 24px 40px; }
+.rpt-section { margin-top:28px; }
+.rpt-section-title { font-size:13px; font-weight:800; color:var(--red); letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px; padding-bottom:8px; border-bottom:2px solid var(--yellow); display:inline-block; }
+.rpt-block { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px; margin-bottom:12px; }
+.rpt-block-title { font-size:15px; font-weight:800; color:var(--ink); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.rpt-block-num { width:26px; height:26px; border-radius:50%; background:var(--yellow); color:var(--red); font-size:12px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.rpt-block p { font-size:14px; color:var(--ink-mid); line-height:1.7; margin-bottom:8px; }
+.rpt-block p:last-child { margin-bottom:0; }
+.rpt-list { list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:6px; }
+.rpt-list li { font-size:14px; color:var(--ink-mid); line-height:1.6; padding-left:18px; position:relative; }
+.rpt-list li::before { content:''; position:absolute; left:0; top:9px; width:7px; height:7px; border-radius:50%; background:var(--yellow); border:1.5px solid var(--yellow-deep); }
+.rpt-example { background:var(--yellow-tint); border-left:3px solid var(--yellow); border-radius:0 var(--r-sm) var(--r-sm) 0; padding:12px 14px; margin-top:10px; font-size:13px; color:var(--ink-mid); line-height:1.6; }
+.rpt-example strong { color:var(--ink); display:block; margin-bottom:4px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+.rpt-alert { background:#fff8e6; border:1.5px solid #ffd700; border-radius:var(--r-md); padding:16px; margin-bottom:12px; }
+.rpt-alert-title { font-size:12px; font-weight:800; color:var(--red); letter-spacing:.07em; text-transform:uppercase; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
+.rpt-alert-title::before { content:'⚠️'; font-size:14px; }
+.rpt-alert ul { list-style:none; padding:0; display:flex; flex-direction:column; gap:5px; }
+.rpt-alert li { font-size:13px; color:var(--ink-mid); padding-left:14px; position:relative; }
+.rpt-alert li::before { content:'•'; position:absolute; left:0; color:var(--red); font-weight:900; }
+
+/* CLOSING MESSAGE */
+.rpt-closing { background:linear-gradient(135deg,#fffbe6,#fff8d6); border:1.5px solid var(--yellow); border-radius:var(--r-xl); padding:22px 20px; margin-top:28px; text-align:center; }
+.rpt-closing-icon { font-size:32px; margin-bottom:10px; }
+.rpt-closing-text { font-size:15px; font-weight:700; color:var(--ink); line-height:1.5; margin-bottom:6px; }
+.rpt-closing-sub { font-size:13px; color:var(--ink-mid); line-height:1.6; }
+
+/* CTA */
+.rpt-cta-wrap { padding: 24px 24px 32px; }
+.rpt-cta { width:100%; background:var(--yellow); border:none; color:var(--red); font-family:'Poppins',sans-serif; font-size:16px; font-weight:800; padding:17px; border-radius:var(--r-md); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; text-decoration:none; box-shadow:0 4px 20px rgba(255,215,0,.30); transition:background .15s, transform .1s; letter-spacing:.01em; }
+.rpt-cta:active { background:var(--yellow-dark); transform:scale(.98); }
+.rpt-back { width:100%; background:var(--white); border:1.5px solid var(--border); color:var(--ink-soft); font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; padding:13px; border-radius:var(--r-sm); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; margin-top:10px; }
+.rpt-back svg { width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+@keyframes fadeSlideUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+.anim { animation: fadeSlideUp .4s var(--ease-out) both; }
+
+@media (min-width:700px) {
+  body { padding:28px 16px; }
+  #page { border-radius:24px; box-shadow:0 12px 60px rgba(0,0,0,.10); overflow:hidden; min-height:auto; }
+}
+@media (max-width:480px) {
+  .rpt-header { padding:20px 18px 16px; }
+  .rpt-banner { padding:24px 18px; }
+  .rpt-body { padding:0 18px 36px; }
+  .rpt-cta-wrap { padding:20px 18px 28px; }
+  .rpt-block { padding:16px; }
+}
+
+.perfil-vermelho .rpt-banner { background: linear-gradient(135deg, #fbbdd0, #fdeef4); }
+.perfil-vermelho .rpt-title { color: #1A1A1A; }
+</style>
+</head>
+<body>
+<div id="page" class="perfil-vermelho">
+
+  <!-- HEADER -->
+  <div class="rpt-header">
+    <img src="IMG_0353.PNG" alt="Instituto Reviver">
+    <div class="rpt-header-text">
+      <span class="rpt-instituto">Instituto Reviver</span>
+      <span class="rpt-doc-title">Protocolo de Apoio Familiar</span>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="rpt-banner anim">
+    <div class="rpt-badge">❤️ Atenção Prioritária</div>
+    <div class="rpt-title">Protocolo de Atenção Especializada Prioritária</div>
+    <div class="rpt-intro">Você não está exagerando e não está sozinho(a). As respostas indicam sinais importantes de risco e sofrimento emocional intenso. Isso não significa que não existe solução. Significa que este é o momento de buscar ajuda especializada.</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="rpt-body">
+    
+        <div class="rpt-section">
+          <div class="rpt-section-title">O que este resultado indica</div>
+          
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">1</span>
+                Sinais de risco identificados
+              </div>
+              <p>Os sinais podem estar relacionados a:</p>
+              <ul class="rpt-list"><li>Perda importante do controle sobre o uso</li><li>Crises emocionais frequentes</li><li>Agressividade ou conflitos familiares intensos</li><li>Desaparecimentos ou afastamento familiar</li><li>Prejuízos financeiros graves</li><li>Sofrimento emocional severo da família</li></ul>
+              
+            </div>
+        </div>
+        <div class="rpt-section">
+          <div class="rpt-section-title">O que fazer nos próximos dias</div>
+          
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">1</span>
+                Procure uma avaliação especializada
+              </div>
+              <p>Uma avaliação profissional pode ajudar a identificar o nível de gravidade, os tratamentos mais indicados e se há necessidade de acompanhamento psicológico ou psiquiátrico.</p>
+              
+              
+            </div>
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">2</span>
+                Utilize a Rede de Atenção Psicossocial
+              </div>
+              <p>Em qualquer cidade do Brasil, você pode buscar orientação através da RAPS do SUS. Nossa equipe pode orientar você sobre como localizar os serviços disponíveis na sua região.</p>
+              
+              
+            </div>
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">3</span>
+                Tire suas dúvidas na Comunidade de Apoio
+              </div>
+              <p>Você entrou em uma comunidade formada para acolher famílias que estão passando por situações semelhantes. Lá você poderá:</p>
+              <ul class="rpt-list"><li>Compartilhar suas dúvidas com segurança</li><li>Receber orientações iniciais</li><li>Entender quais recursos existem na sua cidade</li><li>Aprender a identificar sinais de agravamento</li><li>Receber direcionamentos sobre os próximos passos</li></ul>
+              
+            </div>
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">4</span>
+                Conheça o Instituto Reviver
+              </div>
+              <p>Dependendo da avaliação, pode ser importante conhecer programas terapêuticos mais estruturados. Nossa equipe pode explicar como funciona o acolhimento terapêutico do Instituto Reviver.</p>
+              
+              
+            </div>
+        </div>
+        <div class="rpt-section">
+          <div class="rpt-section-title">O que evitar neste momento</div>
+          
+            <div class="rpt-block">
+              <div class="rpt-block-title">
+                <span class="rpt-block-num">1</span>
+                Atitudes que podem agravar a situação
+              </div>
+              
+              <ul class="rpt-list"><li>Discussões em momentos de crise</li><li>Ameaças ou confrontos impulsivos</li><li>Assumir sozinho toda a responsabilidade</li><li>Tomar decisões importantes sem orientação adequada</li></ul>
+              
+            </div>
+        </div>
+
+    <!-- SINAIS DE ALERTA -->
+    <div class="rpt-section">
+      <div class="rpt-alert">
+        <div class="rpt-alert-title">Busque ajuda imediata se houver risco à segurança:</div>
+        <ul><li>Violência física ou ameaças</li><li>Uso de múltiplas substâncias combinadas</li><li>Crise psiquiátrica aguda</li><li>Risco de autolesão</li></ul>
+      </div>
+    </div>
+
+    <!-- MENSAGEM FINAL -->
+    <div class="rpt-closing">
+      <div class="rpt-closing-icon">❤️</div>
+      <div class="rpt-closing-text">Buscar ajuda é um ato de cuidado, não de fracasso.</div>
+      <div class="rpt-closing-sub">Mesmo quando a situação parece difícil, existem caminhos de tratamento, acolhimento e reconstrução. Use a comunidade para tirar suas dúvidas e dar o próximo passo.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="rpt-cta-wrap">
+    <a href="https://chat.whatsapp.com/IrmzScrTwPXHnOyaAXAemf" target="_blank" class="rpt-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--red)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.523 5.847L.057 23.547a.5.5 0 0 0 .609.61l5.7-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.697-.504-5.243-1.385l-.376-.214-3.884.999 1.018-3.793-.234-.389A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Entrar na comunidade gratuita
+    </a>
+    <a href="index.html" class="rpt-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Voltar ao início
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
